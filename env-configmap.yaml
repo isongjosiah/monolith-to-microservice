@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-env
+  namespace: default
+data:
+  AWS_BUCKET: monotomicro-josiah
+  AWS_REGION: us-east-1
+  POSTGRES_HOST: mono-to-micro-josiah-db.ctopj9v9w4bs.us-east-1.rds.amazonaws.com
+  POSTGRES_DB: postgres
+  URL: http://localhost:8100
+
+
