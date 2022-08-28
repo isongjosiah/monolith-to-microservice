@@ -3,15 +3,16 @@ import {config} from './config/config';
 
 
 // Configure AWS
+if (config.aws_profile != "DEPLOYED") {
 const credentials = new AWS.SharedIniFileCredentials({profile: config.aws_profile});
-console.log(credentials)
 AWS.config.credentials = credentials;
-
+}
 export const s3 = new AWS.S3({
   signatureVersion: 'v4',
   region: config.aws_region,
   params: {Bucket: config.aws_media_bucket},
 });
+console.log(s3.config)
 
 // Generates an AWS signed URL for retrieving objects
 export function getGetSignedUrl( key: string ): string {
