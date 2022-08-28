@@ -1,7 +1,6 @@
 import dotenv from 'dotenv'
 
 dotenv.config({path: '../.env'})
-console.log(process.env)
 import cors from 'cors';
 import express from 'express';
 import {sequelize} from './sequelize';
